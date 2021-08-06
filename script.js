@@ -173,11 +173,15 @@ set_local = function(obj){
     localStorage.setItem(SRED_PROJECTS, JSON.stringify(obj));
 }
 
-if(true){
-    window.SRED_PROJECTS = 'SRED_PROJECTS_DEMO'
+if(false){
+    window.SRED_PROJECTS = 'SRED_PROJECTS'
     obj = demo_data;
     set_local(obj);
 }
+
+var obj = localStorage.getItem(SRED_PROJECTS)
+if(!obj) set_local(demo_data)
+
 
 add_project = function(name, description){
     
